@@ -1,7 +1,15 @@
 {pkgs, ...}: {
 
   environment.systemPackages = with pkgs; [
+    cargo
+    neovim
     steam-run
+    gcc
+    unzip
+    nodejs
+    python3
+    lazygit
+    rustc
   ];
 
   programs = {
@@ -47,6 +55,9 @@
         xorg.libxshmfence
         xorg.libXxf86vm
         libelf
+        libffi
+        ncurses
+        readline
 
         # Required
         glib
