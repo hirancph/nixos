@@ -2,6 +2,11 @@ window-rule {
   geometry-corner-radius 30
   clip-to-geometry true
   draw-border-with-background false
+
+  opacity 0.8
+  background-effect {
+    blur true
+    }
   }
 
 
