@@ -31,6 +31,15 @@ binds {
   Mod+Shift+Escape {
         spawn-sh "noctalia msg panel-toggle session";
       }
+  Mod+V {
+    spawn-sh "noctalia msg panel-toggle clipboard";
+  }
+  Print {
+    spawn-sh "noctalia msg screenshot-fullscreen";
+  }
+  Mod+Print {
+    spawn-sh "noctalia msg screenshot-region";
+  }
 
 
   // SYSTEM AND OVERVIEW
@@ -51,6 +60,13 @@ binds {
   Mod+Shift+I   { move-column-to-workspace-up; }
   Mod+Shift+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
   Mod+Shift+WheelScrollUp cooldown-ms=150 { move-column-to-workspace-up; }
+
+
+  // WINDOW RULES
+  Mod+O     { toggle-window-rule-opacity; }
+
+
+
 
 
   // APPLICATION LAUNCHERS
