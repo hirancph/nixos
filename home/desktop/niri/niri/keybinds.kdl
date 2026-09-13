@@ -54,8 +54,8 @@ binds {
 
 
   // APPLICATION LAUNCHERS
-  Mod+Return { spawn "ghostty"; }
-  Mod+Y { spawn "ghostty" "-e" "yazi"; }
+  Mod+Return { spawn "kitty"; }
+  Mod+Y { spawn "kitty" "-e" "yazi"; }
   Mod+B { spawn "zen-beta"; }
   Mod+E { spawn "dolphin"; }
 }

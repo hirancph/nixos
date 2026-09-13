@@ -1,7 +1,7 @@
 {...}: {
   imports = [
     ./browsers
-    ./ghostty
+    ./terminal
     ./zed
   ];
 }
