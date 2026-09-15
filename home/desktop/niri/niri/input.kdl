@@ -2,7 +2,7 @@ input {
   keyboard {
     xkb {
       // Change capslock to escape
-      //options "caps:escape_shifted_capslock"
+      //options "caps:escape_shifted_capslock" // handled by keyd now
       layout "us"
       model ""
       rules ""
