@@ -1,6 +1,7 @@
 {...}: {
   imports = [
     ./niri
+    ./stylix
     ./xdg
   ];
 }
