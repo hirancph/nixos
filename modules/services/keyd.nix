@@ -6,11 +6,11 @@
         ids = [ "*" ];
         settings = {
           main = {
-            shift = "layer(shift)";
-            space = "overload(control, space)";
+            capslock = "overload(control, esc)";
+            #space = "overload(control, space)"; #disable becuase of milliseconds delay
           };
           shift = {
-            space = "space";
+            capslock = "capslock";
           };
         };
       };
