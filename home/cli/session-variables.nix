@@ -1,8 +1,8 @@
 {
   home.sessionVariables = {
-    EDITOR = "hx";
-    VISUAL = "hx";
-    SUDO_EDITOR = "hx";
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+    SUDO_EDITOR = "nvim";
     XDG_MENU_PREFIX = "plasma-";
   };
 }

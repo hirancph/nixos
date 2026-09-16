@@ -1,7 +1,7 @@
 {...}: {
   imports = [
     ./git.nix
-    ./helix.nix
+    #./helix.nix
     ./modern-cli.nix
     ./session-variables.nix
     ./yazi
