@@ -9,6 +9,7 @@
       ibm-plex
       inter
       jetbrains-mono
+      nerd-fonts.jetbrains-mono
       material-icons
       material-symbols
       maple-mono.NF
