@@ -15,6 +15,12 @@
 ;; Display line numbers in every buffer
 (global-display-line-numbers-mode 1)
 
+;; Set Jetbrains Mono Nerd Font
+(set-face-attribute 'default nil
+		    :family "JetBrainsMono Nerd Font"
+		    :height 130
+		    :weight 'regular)
+
 ;; Load doom-themes
 (use-package ef-themes
   :ensure t
