@@ -39,10 +39,10 @@
 		    :weight 'regular)
 
 ;; Load doom-themes
-(use-package ef-themes
+(use-package modus-themes
   :ensure t
-  :config
-  (load-theme 'ef-dream t))
+  :init
+  (load-theme 'modus-vivendi-tinted t))
 
 ;; Most recently edited file
 (recentf-mode 1)
