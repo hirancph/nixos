@@ -24,6 +24,7 @@
       powerline-fonts
       roboto
       roboto-mono
+      roboto-slab
       symbola
       terminus_font
     ];
