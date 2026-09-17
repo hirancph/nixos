@@ -102,8 +102,6 @@
 (straight-use-package '(nano-emacs :type git :host github :repo "rougier/nano-emacs"))
 
 ;; Load core dependencies and writer mode
-(require 'nano-base-colors)
-(require 'nano-faces)
 (require 'nano-writer)
 
 (custom-set-variables
