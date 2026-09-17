@@ -4,6 +4,7 @@
     ./communication
     ./emacs
     ./media
+    ./office
     ./terminal
     ./zed
   ];
