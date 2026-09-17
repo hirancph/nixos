@@ -98,6 +98,14 @@
   (corfu-auto-prefix 2)
   (corfu-auto-delay 0.1))
 
+;; Use writer-mode of rougier for org-mode
+(straight-use-package '(nano-emacs :type git :host github :repo "rougier/nano-emacs"))
+
+;; Load core dependencies and writer mode
+(require 'nano-base-colors)
+(require 'nano-faces)
+(require 'nano-writer)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
