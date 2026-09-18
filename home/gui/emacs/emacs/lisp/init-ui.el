@@ -52,12 +52,12 @@
                     :box '(:line-width 1 :color "#0d0e1c"))
 
 ;; Modeline
-;;(use-package nano-modeline
-;;  :ensure t
-;;  :init
-;;  (setq nano-modeline-position 'nano-modeline-footer)
-;;  :config
-;;  (nano-modeline-text-mode t)
-;;  (nano-modeline-prog-mode t))
+(use-package nano-modeline
+  :ensure t
+  :init
+  (setq nano-modeline-position 'nano-modeline-footer)
+  :config
+  (nano-modeline-text-mode t)
+  (nano-modeline-prog-mode t))
 
 (provide 'init-ui)
