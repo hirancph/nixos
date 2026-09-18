@@ -2,6 +2,7 @@
 
 ;; Global buffer behavior
 (global-display-line-numbers-mode 1)
+(setq display-line-numbers-type 'relative)
 (recentf-mode 1)
 
 (pixel-scroll-precision-mode 1)
@@ -16,7 +17,7 @@
 ;; monospace font for code, tables and UI
 (set-face-attribute 'default nil
                     :family "JetBrainsMono Nerd Font"
-                    :height 130
+                    :height 140
                     :weight 'regular)
 
 ;; Proportional font for Org prose and headers

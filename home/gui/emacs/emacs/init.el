@@ -25,6 +25,7 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 ;; Load custom modules
+(require 'init-evil)
 (require 'init-ui)
 (require 'init-completion)
 (require 'init-org)
