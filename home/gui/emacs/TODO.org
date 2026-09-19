@@ -1,0 +1,94 @@
+#+TITLE: Things To Do For Emacs
+
+* Performace and Early Tweaks
+
+#+BEGIN_SRC emacs-lisp
+;; early-init.el
+(setq gc-cons-threshold (* 50 1024 1024)) ; 50MB during init
+
+(push '(menu-bar-lines . 0) default-frame-alist)
+(push '(tool-bar-lines . 0) default-frame-alist)
+(push '(scroll-bar-mode . nil) default-frame-alist)
+
+(setq inhibit-startup-screen t)
+#+END_SRC
+
+* In-Buffer Autocompletion
+ * corfu is already setted up, setup cape for providing extra completion backends (words, files, dabbrev) for corfu
+
+* Quality-Of-Life Settings
+ * savehist-mode
+ * save-place-mode
+ * *global-auto-revert-mode*: (set this up) Automatically refreshes buffers when files change on disk
+  #+BEGIN_SRC emacs-lisp
+    (global-auto-revert-mode 1)
+  #+END_SRC
+ * custom leader key mapping (native)
+ * ibuffer: categorize buffers when switching using C-x C-b (able to integrate with consult?)
+
+* Coding, Git & Development Tools
+ * Eglot (LSP): LSP server to connect to external language servers
+   * Eglot Optimizations
+     #+BEGIN_SRC emacs-lisp
+       (setq read-process-output-max (* 3 1024 1024))
+       (setq eglot-events-buffer-size 0)
+     #+END_SRC
+ * dape: debugger
+ * flymake: Error navigation
+ * aphelia: Runs code formatters on save without moving cursor or blocking UI
+ * Treesitter: Built-in modern syntax highlighting
+   * treesit-auto: Automatically downloads, compiles and installs Tree-Sitter language grammars
+     #+BEGIN_SRC emacs-lisp
+       (use-package treesit-auto
+         :custom
+       (treesit-auto-install 'prompt)
+       :config
+       (global-treesit-auto-mode))
+     #+END_SRC
+   * Previously, I thought major mode for each language is needed for syntax highlighting, but it seems that wasn't the case
+ * Magit: Git interface
+ * diff-hl: Display git modifications without running magit-status
+ * Project.el: Built-in Project Management (not much necessary for now)
+ * combobulate: combobulate uses Tree-sitter to navigate, select, drag, and refactor AST nodes
+ * eldoc-box: replacement for eglot printing long docs in minibuffer
+ * breadcrumb.el: Display your current project path and symbol scope (Class > Method > Variable)
+ * flymake-popon: Instead of looking down at the minibuffer or opening a separate Flymake diagnostics window, render compiler and LSP error messages in a floating popup directly under your cursor or line.
+ * ts-fold: Fold functions, classes, docstrings, and control blocks using Tree-sitter AST nodes rather than unreliable regex or indentation levels.
+ * LSP Inlay Hints Control (Native Eglot)
+ * quickrun: Run the current buffer or selected region immediately in a popup output buffer without setting up build files (supports 30+ languages out of the box).
+ * vdiff: vdiff offers a modern, side-by-side diff buffer interface
+ 
+* Window Management
+ * tab-bar-mode (Built-in): native workspace/tab management for grouping
+
+* Terminal Integration
+ * vterm: terminal emulator in emacs
+
+* Org-Mode
+ * Org-Capture: Take quick notes anywhere in emacs
+ * denote: cleaner and simpler than org-roam
+ * org-roam
+ * mixed-pitch: uses proportional fonts
+ * org-babel
+ * org-ql: query org files using lisp syntax
+ * jinx: Ultra-Fast Spellchecking
+ * olivetti: center text buffer
+ * anki-editor
+ * org-ol-tree: Display an interactive, collapsable visual outline tree of your Org file in a side window for rapid navigation across deep headings.
+ * Source Block Formatting & Execution Ergonomics: Make embedded code blocks behave like first-class programming buffers when editing inside Org mode (C-c ').
+ * org-download: Paste screenshots or drag image files directly into Org buffers. Automatically saves images into a designated folder and inserts the #+attr_html or #+caption tags
+ * org-transclusion: Embed paragraphs, sections, or code snippets from other Org files into your current buffer in real-time
+ * org-auto-tangle: When writing literate configuration files or code in Org mode, automatically tangle (org-babel-tangle) source blocks into target files (e.g., config.org $\rightarrow$ init.el) every time you save.
+ * org-re-reveal: (found it interesting, not important) Convert Org outlines into animated, browser-based HTML5 presentations powered by Reveal.js without manually writing HTML or JavaScript
+ * org-journal
+
+* Visual Polish
+ * indent-bars: guide lines for code blocks
+ * mode-line-format
+
+* File Manager
+ * Setup Dirvish
+
+* Contextual Actions
+ * embark: Acts like a context menu to see the list of actions that can be performed on your target
+ * wgrep: turns consult-ripgrep search buffer to editable text buffers
