@@ -14,6 +14,15 @@
 ;; 3-line margin when moving cursor
 (setq scroll-margin 3)
 
+;; Stop blinking cursor
+(blink-cursor-mode 0)
+
+;; using custom-theme-set-faces to set cursor colour to not get overriden by modus
+(custom-theme-set-faces
+ 'user
+ ;; Cursor Color Override
+ '(cursor             ((t (:background "#c0caf5")))))
+
 ;; monospace font for code, tables and UI
 (set-face-attribute 'default nil
                     :family "JetBrainsMono Nerd Font"
