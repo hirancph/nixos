@@ -29,7 +29,7 @@
                     :height 140
                     :weight 'regular)
 
-;; Proportional font for Org prose and headers
+;; Proportional font for Org prose and headers (not used anymore)
 (set-face-attribute 'variable-pitch nil
 		    :family "Roboto"
 		    :height 1.1

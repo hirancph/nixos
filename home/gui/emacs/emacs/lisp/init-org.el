@@ -16,7 +16,8 @@
 ;; hook for changing prose colour to the heading one
 (add-hook 'org-mode-hook
           (lambda ()
-            (face-remap-add-relative 'default :foreground "#d8e2ec")))
+            (face-remap-add-relative 'default
+				     :foreground "#d8e2ec")))
 
 
 (straight-use-package '(nano-emacs :type git :host github :repo "rougier/nano-emacs"))
