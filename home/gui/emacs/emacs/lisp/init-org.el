@@ -19,6 +19,13 @@
             (face-remap-add-relative 'default
 				     :foreground "#d8e2ec")))
 
+;; Hide leading stars and change bullet points
+(use-package org-superstar
+  :ensure t
+  :hook (org-mode . org-superstar-mode)
+  :config
+  (setq org-superstar-headline-bullets-list '(""))
+  (setq org-superstar-leading-bullet ""))
 
 (straight-use-package '(nano-emacs :type git :host github :repo "rougier/nano-emacs"))
 (require 'nano-writer)
