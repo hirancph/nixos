@@ -3,6 +3,13 @@
 ;; auto complete for ( " { [ etc...
 (electric-pair-mode 1)
 
+;; Keybinding hints
+(use-package which-key
+  :init (which-key-mode)
+  :diminish which-key-mode
+  :config
+  (setq which-key-idle-delay 0.3))
+
 ;; Minibuffer completion UI
 (use-package vertico
   :ensure t

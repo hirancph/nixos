@@ -41,13 +41,6 @@
   :config
   (modus-themes-load-theme 'modus-vivendi-tinted))
 
-;; Keybinding hints
-(use-package which-key
-  :init (which-key-mode)
-  :diminish which-key-mode
-  :config
-  (setq which-key-idle-delay 0.3))
-
 ;; setting colours from nano-modeline to the default modeline
 ;; Force active mode line colors
 (set-face-attribute 'mode-line-active nil
