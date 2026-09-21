@@ -3,19 +3,52 @@
 ;; Global buffer behavior
 (global-display-line-numbers-mode 1)
 (setq display-line-numbers-type 'relative)
+(setq-default display-line-numbers-grow-only nil)
+(setq-default display-line-numbers-width 3)
+(setq-default display-line-numbers-width-start nil)
+(setq-default truncate-lines t)
 (recentf-mode 1)
 
-(pixel-scroll-precision-mode 1)
+(setq use-short-answers t)
+
+;;(pixel-scroll-precision-mode 1) ;; Don't enable: this was causing very fast scrolling
+
+(setq scroll-error-top-bottom t)
+
+;; replacement for pixel-scroll-precision-mode (I guess)
+;; Scroll one line at a time and map modifier keys to specific actions.
+(setq mouse-wheel-scroll-amount
+      '(1
+        ((shift) . hscroll) ((meta))
+        ((control meta) . global-text-scale)
+        ((control) . text-scale)))
+(setq mouse-wheel-progressive-speed nil);; Prevent scroll acceleration spikes
+(setq mouse-wheel-follow-mouse 't);; Scroll window under mouse cursor
 
 ;; Prevent screen jumping when moving cursor down
 (setq scroll-step 1)
-(setq scroll-conservatively 101)
+(setq scroll-conservatively 20)
+(setq scroll-preserve-screen-position t)
+(setq auto-window-vscroll nil)
+(setq fast-but-imprecise-scrolling t)
+(setq-default scroll-up-aggressively 0.01
+              scroll-down-aggressively 0.01)
+
+;; Allow scrolling actions while remaining inside a search block.
+(setq isearch-allow-scroll 'unlimited)
 
 ;; 3-line margin when moving cursor
 (setq scroll-margin 3)
 
+;; horizontal scrolling
+(setq hscroll-margin 2
+      hscroll-step 1)
+
 ;; Stop blinking cursor
 (blink-cursor-mode 0)
+
+;; Skip some fontification when input is pending
+(setq redisplay-skip-fontification-on-input t)
 
 ;; using custom-theme-set-faces to set cursor colour to not get overriden by modus
 (custom-theme-set-faces
