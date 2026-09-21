@@ -32,3 +32,4 @@
 (require 'init-org)
 (require 'init-languages)
 (require 'init-git)
+(require 'init-eat)
