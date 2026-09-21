@@ -10,7 +10,35 @@
   :config
   (setq which-key-idle-delay 0.3))
 
-;; Minibuffer completion UI
+;; Embark for contextual actions
+(use-package embark
+  :ensure t
+  :bind
+  (("C-a"   . embark-act) 
+   ("C-;"   . embark-dwim) 
+   ("C-h B" . embark-bindings))   
+
+  :init
+  (setq prefix-help-command #'embark-prefix-help-command)
+
+  :config
+  (add-to-list 'display-buffer-alist
+               '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"
+                 (display-buffer-at-bottom)
+                 (window-parameters (mode-line-format . nil)))))
+
+(use-package wgrep
+  :ensure t
+  :custom
+  (wgrep-auto-save-buffer t)
+  (wgrep-change-readonly-file t))
+
+(use-package embark-consult
+  :ensure t
+  :after (embark consult)
+  :hook
+  (embark-collect-mode . consult-preview-at-point-mode))
+
 (use-package vertico
   :ensure t
   :init
@@ -45,5 +73,13 @@
   (corfu-auto t)
   (corfu-auto-prefix 2)
   (corfu-auto-delay 0.1))
+
+(use-package cape
+  :ensure t
+  :init
+  ;; Add backends to the global completion hook
+  (add-hook 'completion-at-point-functions #'cape-file)
+  (add-hook 'completion-at-point-functions #'cape-dabbrev)
+  (add-hook 'completion-at-point-functions #'cape-keyword))
 
 (provide 'init-completion)
