@@ -31,3 +31,4 @@
 (require 'init-completion)
 (require 'init-org)
 (require 'init-languages)
+(require 'init-git)
