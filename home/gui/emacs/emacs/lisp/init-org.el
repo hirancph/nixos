@@ -19,6 +19,11 @@
             (face-remap-add-relative 'default
 				     :foreground "#d8e2ec")))
 
+;; Set languages in org-babel
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)
+   (python . t)))
 ;; Hide leading stars and change bullet points
 (use-package org-superstar
   :ensure t
