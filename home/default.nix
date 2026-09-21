@@ -3,5 +3,6 @@
     ./cli
     ./desktop
     ./gui
+    ./languages
   ];
 }
