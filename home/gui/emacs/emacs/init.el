@@ -28,6 +28,7 @@
 (require 'init-clean)
 (require 'init-evil)
 (require 'init-ui)
+(require 'init-dirvish)
 (require 'init-completion)
 (require 'init-org)
 (require 'init-languages)
