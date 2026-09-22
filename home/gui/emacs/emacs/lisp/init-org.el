@@ -25,6 +25,16 @@
             (face-remap-add-relative 'default
 				     :foreground "#d8e2ec")))
 
+;; org-appear to reveal hidden marker or links
+(use-package org-appear
+  :ensure t
+  :after org
+  :hook (org-mode . org-appear-mode)
+  :custom
+  (org-appear-delay 0.2)
+  (org-appear-autolinks t)
+  (org-appear-autosubmarkers t))
+
 ;; Set languages in org-babel
 (org-babel-do-load-languages
  'org-babel-load-languages
