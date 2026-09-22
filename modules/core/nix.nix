@@ -1,4 +1,4 @@
-{...}: {
+{config, pkgs, ...}: {
   nixpkgs.config.allowUnfree = true;
 
   nix = {
@@ -9,4 +9,13 @@
       nix-path = "";
     };
   };
+
+  programs.nh = {
+    enable = true;
+  };
+
+  environment.systemPackages = with pkgs; [
+    nvd
+    nix-output-monitor
+  ];
 }
