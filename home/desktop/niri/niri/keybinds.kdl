@@ -40,6 +40,24 @@ binds {
   Mod+Print {
     spawn-sh "noctalia msg screenshot-region";
   }
+  Mod+Shift+D {
+    spawn-sh "noctalia msg notification-dnd-toggle";
+  }
+  Mod+Pause {
+    spawn-sh "noctalia msg media toggle";
+  }
+  Mod+F11 {
+    spawn-sh "noctalia msg media previous";
+  }
+  Mod+F12 {
+    spawn-sh "noctalia msg media next";
+  }
+  Mod+minus {
+    spawn-sh "noctalia msg volume-down";
+  }
+  Mod+equal {
+    spawn-sh "noctalia msg volume-up";
+  }
 
 
   // SYSTEM AND OVERVIEW
