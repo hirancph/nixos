@@ -5,8 +5,15 @@
   :mode ("\\.py\\'" . python-ts-mode))
 
 (use-package nix-ts-mode
-   :ensure t
-   :mode "\\.nix\\'")
+  :ensure t
+  :mode "\\.nix\\'")
+
+(use-package apheleia
+  :ensure t
+  :config
+  (apheleia-global-mode +1)
+  (push '(nix-mode . nixfmt) apheleia-mode-alist)
+  (push '(nix-ts-mode . nixfmt) apheleia-mode-alist))
 
 ;; broken treesitter?
 ;; (use-package kdl-mode
@@ -32,9 +39,9 @@
   :hook
   ;; Enable Eglot automatically in target programming modes
   ((python-mode python-ts-mode
-    c-mode c++-mode c-ts-mode c++-ts-mode
-    js-mode js-ts-mode
-    nix-mode nix-ts-mode) . eglot-ensure)
+		c-mode c++-mode c-ts-mode c++-ts-mode
+		js-mode js-ts-mode
+		nix-mode nix-ts-mode) . eglot-ensure)
   :custom
   ;; Performance & event optimizations
   (read-process-output-max (* 3 1024 1024))
