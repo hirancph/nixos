@@ -5,7 +5,7 @@
     ./emacs
     ./kdeconnect.nix
     ./media
-    ./office
+    ./productivity
     ./terminal
     ./zed
   ];
