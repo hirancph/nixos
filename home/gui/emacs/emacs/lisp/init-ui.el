@@ -91,9 +91,16 @@
 (use-package nano-modeline
   :ensure t
   :init
+  ;; Force the modeline to the bottom (traditional mode-line position)
   (setq nano-modeline-position 'nano-modeline-footer)
   :config
+  ;; Set generic prog and text modes as the global fallback for all other buffers
   (nano-modeline-text-mode t)
-  (nano-modeline-prog-mode t))
+  (nano-modeline-prog-mode t)
+  ;; Explicitly hook specialized modes to get their custom layouts
+  (add-hook 'org-mode-hook #'nano-modeline-org-mode)
+  (add-hook 'pdf-view-mode-hook #'nano-modeline-pdf-mode)
+  (add-hook 'elfeed-search-mode-hook #'nano-modeline-elfeed-search-mode)
+  (add-hook 'term-mode-hook #'nano-modeline-term-mode))
 
 (provide 'init-ui)
