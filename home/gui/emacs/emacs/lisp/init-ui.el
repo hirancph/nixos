@@ -68,6 +68,8 @@
 		    :height 1.1
 		    :weight 'regular)
 
+(setq-default line-spacing 4)
+
 ;; Load theme
 (use-package modus-themes
   :ensure t
