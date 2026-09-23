@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   fonts = {
     packages = with pkgs; [
       dejavu_fonts
@@ -8,6 +8,7 @@
       hackgen-nf-font
       ibm-plex
       inter
+      inter-nerdfont
       jetbrains-mono
       nerd-fonts.jetbrains-mono
       material-icons
