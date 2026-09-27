@@ -1,13 +1,14 @@
 ;; -*- lexical-binding: t; -*-
 
-;; undo package for vim
-(use-package undo-fu
-  :ensure t)
+(setq undo-limit 67108864)         ; 64 MB
+(setq undo-strong-limit 100663296)  ; 96 MB
+(setq undo-outer-limit 1006632960) ; 1 GB
 
 (use-package evil
   :ensure t
   :init
-  (setq evil-undo-system 'undo-fu)
+  (setq evil-undo-system 'undo-redo)
+  (setq evil-want-fine-undo t)
   (setq evil-want-keybinding nil) ; Required by evil-collection
   (setq evil-normal-state-cursor 'box
         evil-insert-state-cursor 'bar
