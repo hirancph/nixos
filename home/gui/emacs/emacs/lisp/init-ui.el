@@ -62,10 +62,10 @@
                     :height 140
                     :weight 'regular)
 
-;; Proportional font for Org prose and headers (not used anymore)
+;; Proportional font for Org prose and headers 
 (set-face-attribute 'variable-pitch nil
-		    :family "Roboto"
-		    :height 1.1
+		    :family "Inter Nerd Font"
+		    :height 1.05
 		    :weight 'regular)
 
 (setq-default line-spacing 4)
