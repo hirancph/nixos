@@ -43,7 +43,7 @@ binds {
   Mod+Shift+D {
     spawn-sh "noctalia msg notification-dnd-toggle";
   }
-  Mod+Pause {
+  Pause {
     spawn-sh "noctalia msg media toggle";
   }
   Mod+F11 {
