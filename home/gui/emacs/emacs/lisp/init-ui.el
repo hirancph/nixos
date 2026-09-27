@@ -70,6 +70,10 @@
 
 (setq-default line-spacing 4)
 
+;; override because it's distracting in olivetti
+(setq modus-themes-common-palette-overrides
+      '((fringe unspecified)))
+
 ;; Load theme
 (use-package modus-themes
   :ensure t
