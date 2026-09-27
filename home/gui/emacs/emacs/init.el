@@ -31,6 +31,7 @@
 (require 'init-dirvish)
 (require 'init-completion)
 (require 'init-org)
+;;(require 'init-org-roam)
 (require 'init-languages)
 (require 'init-git)
 (require 'init-eat)
