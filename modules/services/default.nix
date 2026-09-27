@@ -1,5 +1,6 @@
-{...}: {
+{ ... }: {
   imports = [
+    ./cloudflare-warp.nix
     ./flatpak.nix
     ./gnome-services.nix
     ./keyd.nix
