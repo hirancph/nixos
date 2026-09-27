@@ -10,6 +10,7 @@
   (setq evil-undo-system 'undo-redo)
   (setq evil-want-fine-undo t)
   (setq evil-want-keybinding nil) ; Required by evil-collection
+  (setq evil-want-C-u-scroll t)
   (setq evil-normal-state-cursor 'box
         evil-insert-state-cursor 'bar
         evil-visual-state-cursor 'hollow)
