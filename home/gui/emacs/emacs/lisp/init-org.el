@@ -2,22 +2,29 @@
 
 (use-package org
   :ensure t
+  :hook ((org-mode . visual-line-mode)
+	 (org-mode . (lambda () (setq-local evil-auto-indent nil))))
   :config
   ;; --- Variables ---
   (setq org-hide-emphasis-markers t)
   (setq org-hide-leading-stars t)
+  (setq org-return-follows-link t)
   ;; Use the combined list from your second block
   (setq org-hidden-keywords '(title author date startup options)) 
-  (setq-default line-spacing 0.15)
 
   ;; --- Faces / Aesthetics ---
   (custom-theme-set-faces
    'user
-   '(org-document-title ((t (:height 1.8  :weight extra-bold :foreground "#f0f4f8" :inherit fixed-pitch))))
-   '(org-level-1        ((t (:height 1.35 :weight extra-bold :foreground "#d8e2ec" :inherit fixed-pitch))))
-   '(org-level-2        ((t (:height 1.20 :weight extra-bold :foreground "#d8e2ec" :inherit fixed-pitch))))
-   '(org-level-3        ((t (:height 1.10 :weight extra-bold :foreground "#d8e2ec" :inherit fixed-pitch))))
-   '(org-level-4        ((t (:height 1.05 :weight extra-bold :foreground "#d8e2ec" :inherit fixed-pitch))))))
+   '(org-document-title ((t (:height 1.8  :weight extra-bold :foreground "#f0f4f8" :inherit variable-pitch))))
+   '(org-level-1        ((t (:height 1.35 :weight extra-bold :foreground "#d8e2ec" :inherit variable-pitch))))
+   '(org-level-2        ((t (:height 1.20 :weight extra-bold :foreground "#d8e2ec" :inherit variable-pitch))))
+   '(org-level-3        ((t (:height 1.10 :weight extra-bold :foreground "#d8e2ec" :inherit variable-pitch))))
+   '(org-level-4        ((t (:height 1.05 :weight extra-bold :foreground "#d8e2ec" :inherit variable-pitch))))))
+
+(use-package mixed-pitch
+  :ensure t
+  :hook
+  (org-mode . mixed-pitch-mode))
 
 ;; hook for changing prose colour to the heading one
 (add-hook 'org-mode-hook
