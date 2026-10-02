@@ -2,12 +2,16 @@
   inputs,
   pkgs,
   ...
-}: {
-  imports = [inputs.stylix.nixosModules.stylix];
+}:
+{
+  imports = [ inputs.stylix.nixosModules.stylix ];
   stylix = {
     enable = true;
     polarity = "dark";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
+    targets = {
+      chromium.enable = false;
+    };
 
     cursor = {
       name = "Bibata-Modern-Ice";
