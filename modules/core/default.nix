@@ -1,4 +1,4 @@
-{...}: {
+{ ... }: {
   imports = [
     ./bluetooth.nix
     ./fonts.nix
@@ -12,5 +12,6 @@
     ./stylix.nix
     #./systemd-boot.nix
     ./users.nix
+    ./virtualisation.nix
   ];
 }
