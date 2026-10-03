@@ -2,11 +2,10 @@
   imports = [
     ./browsers
     ./communication
-    ./emacs
+    ./editors
     ./kdeconnect.nix
     ./media
     ./productivity
     ./terminal
-    ./zed
   ];
 }
