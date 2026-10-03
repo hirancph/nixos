@@ -1,5 +1,6 @@
-{...}: {
+{ ... }: {
   imports = [
+    ./antigravity
     ./emacs
     ./zed
   ];
