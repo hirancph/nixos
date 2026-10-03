@@ -1,4 +1,4 @@
-{config, pkgs, ...}: {
+{ config, pkgs, ... }: {
   nixpkgs.config.allowUnfree = true;
 
   nix = {
@@ -7,6 +7,17 @@
       experimental-features = "nix-command flakes";
       flake-registry = "";
       nix-path = "";
+    };
+
+    optimise = {
+      automatic = true;
+      dates = [ "weekly" ];
+    };
+
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 14d";
     };
   };
 
