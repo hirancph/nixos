@@ -64,7 +64,7 @@
   (:map flymake-mode-map
 	("M-n" . flymake-goto-next-error)
 	("M-p" . flymake-goto-prev-error)
-	("C-c ! l" . flymake-show-buffer-diagonistics)))
+	("C-c ! l" . flymake-show-buffer-diagnostics)))
 
 ;; Configure built-in Eldoc to display Flymake errors simultaneous in the minibuffer
 (use-package eldoc
