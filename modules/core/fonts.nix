@@ -29,5 +29,16 @@
       symbola
       terminus_font
     ];
+
+    fontconfig = {
+      enable = true;
+      antialias = true;
+      subpixel.rgba = "rgb"; # Change to "none" for oled
+      subpixel.lcdfilter = "default";
+      hinting = {
+        enable = true;
+        style = "slight";
+      };
+    };
   };
 }
