@@ -6,9 +6,9 @@
 (use-package nerd-icons
   :ensure t
   :config
-  ;; fix for missing icons
-  (unless (member "Symbols Nerd Font Mono" (font-family-list))
-    (nerd-icons-install-fonts t)))
+  (when (display-graphic-p)
+    (unless (member "Symbols Nerd Font Mono" (font-family-list))
+      (nerd-icons-install-fonts t))))
 
 (use-package dirvish
   :ensure t

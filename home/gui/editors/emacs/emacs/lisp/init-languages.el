@@ -56,6 +56,10 @@
 (use-package flymake
   :ensure nil
   :hook (prog-mode . flymake-mode)
+  :init
+  ;; Emacs 31 security: allow Flymake to run backends in home directory
+  (add-to-list 'trusted-content "~/")
+  (put 'eglot-flymake-backend 'flymake-always-safe t)
   :custom
   (flymake-no-changes-timeout 0.5)
   (flymake-fringe-indicator-position 'left-fringe)
