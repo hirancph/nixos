@@ -17,7 +17,7 @@
 
     noctalia = {
       url = "github:noctalia-dev/noctalia";
-      inputs.nixpkgs.follows = "nixpkgs"; # this line is optional, prevents downloading two versions of nixpkgs but disables cache
+      # inputs.nixpkgs.follows = "nixpkgs"; # got tired of building
     };
 
     noctalia-greeter = {
@@ -33,31 +33,34 @@
     };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    nixpkgs-unstable,
-    ...
-  } @ inputs: let
-    system = "x86_64-linux";
-    pkgs-unstable = import inputs.nixpkgs-unstable {
-      inherit system;
-      config.allowUnfree = true;
-    };
-  in {
-    nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nixpkgs-unstable,
+      ...
+    }@inputs:
+    let
+      system = "x86_64-linux";
+      pkgs-unstable = import inputs.nixpkgs-unstable {
         inherit system;
-        specialArgs = {
-          inherit self;
-          inherit inputs;
-          inherit pkgs-unstable;
+        config.allowUnfree = true;
+      };
+    in
+    {
+      nixosConfigurations = {
+        nixos = nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = {
+            inherit self;
+            inherit inputs;
+            inherit pkgs-unstable;
+          };
+          # Main nixos configuration file
+          modules = [
+            ./nixos/configuration.nix
+          ];
         };
-        # Main nixos configuration file
-        modules = [
-          ./nixos/configuration.nix
-        ];
       };
     };
-  };
 }
