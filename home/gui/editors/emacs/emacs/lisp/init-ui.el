@@ -114,8 +114,18 @@
   :ensure t
   :hook ((prog-mode yaml-mode) . indent-bars-mode)
   :custom
+  ;; Fine, modern hairline styling (solid thin bar instead of chunky dots)
+  (indent-bars-width-frac 0.1)
+  (indent-bars-pad-frac 0.1)
+  (indent-bars-pattern ".")
+  (indent-bars-zigzag nil)
+  ;; Subtle, non-distracting colors (turn off rainbow depth coloring)
+  (indent-bars-color-by-depth nil)
+  (indent-bars-color '(default :blend 0.15))
+  ;; Subtle current depth highlight
+  (indent-bars-highlight-current-depth '(:blend 0.45 :width 0.14))
+  ;; Clean line display & structure
   (indent-bars-display-on-blank-lines t)
-  (indent-bars-highlight-current-depth '(:blend 0.5))
   (indent-bars-no-descend-lists 'skip)
   (indent-bars-treesit-support t))
 
