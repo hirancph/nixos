@@ -109,4 +109,14 @@
   (add-hook 'elfeed-search-mode-hook #'nano-modeline-elfeed-search-mode)
   (add-hook 'term-mode-hook #'nano-modeline-term-mode))
 
+;; Indentation guide lines
+(use-package indent-bars
+  :ensure t
+  :hook ((prog-mode yaml-mode) . indent-bars-mode)
+  :custom
+  (indent-bars-display-on-blank-lines t)
+  (indent-bars-highlight-current-depth '(:blend 0.5))
+  (indent-bars-no-descend-lists 'skip)
+  (indent-bars-treesit-support t))
+
 (provide 'init-ui)
