@@ -1,5 +1,6 @@
 { ... }: {
   hardware.enableRedistributableFirmware = true;
+  hardware.i2c.enable = true;
   zramSwap.enable = true;
 
   # Btrfs compression

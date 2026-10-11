@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
 
   environment.systemPackages = with pkgs; [
     cargo
@@ -10,6 +10,7 @@
     python3
     lazygit
     rustc
+    ddcutil
   ];
 
   programs = {
