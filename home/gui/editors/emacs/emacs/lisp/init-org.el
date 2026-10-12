@@ -3,8 +3,8 @@
 (use-package org
   :ensure t
   :hook ((org-mode . visual-line-mode)
-	 (org-mode . (lambda ()
-		       (setq-local tab-width 4))))
+	     (org-mode . (lambda ()
+		               (setq-local tab-width 4))))
   :config
   ;; --- Variables ---
   (setq org-hide-emphasis-markers t)
@@ -15,6 +15,13 @@
 
   ;; Stop Org from auto-indenting text under headings/lists
   (setq org-adapt-indentation nil)
+
+  ;; insert plain new line, except inside source blocks
+  (defun my/org-newline-advice (orig-fn &optional indent arg interactive)
+    (if (org-in-src-block-p t)
+        (funcall orig-fn t arg interactive)
+      (newline arg nil)))
+  (advice-add 'org--newline :around #'my/org-newline-advice)
 
   ;; Source block editing & indentation
   (setq org-src-preserve-indentation t)
@@ -39,7 +46,7 @@
 (add-hook 'org-mode-hook
           (lambda ()
             (face-remap-add-relative 'default
-				     :foreground "#d8e2ec")))
+				                     :foreground "#d8e2ec")))
 
 ;; org-appear to reveal hidden marker or links
 (use-package org-appear
@@ -68,11 +75,11 @@
   (setq org-num-skip-unnumbered t)
   (setq org-num-max-level 3)
   (setq org-num-format-function
-	(lambda (numbering)
+	    (lambda (numbering)
           (let ((num-str (mapconcat #'number-to-string numbering ".")))
             (if (= (length numbering) 1)
-		;; Level 1 Heading: Soft Slate Blue (#565f89)
-		(propertize (concat num-str " │ ") 
+		        ;; Level 1 Heading: Soft Slate Blue (#565f89)
+		        (propertize (concat num-str " │ ") 
                             'face '(:foreground "#565f89"))
               ;; Subheadings: Deep Slate (#4a506a)
               (propertize (concat num-str " — ") 
