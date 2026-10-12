@@ -12,6 +12,11 @@
 ;; disabling the lock files
 (setq create-lockfiles nil)
 
+;; Keep custom settings out of init.el
+(setq custom-file (expand-file-name "tmp/custom.el" user-emacs-directory))
+(when (file-exists-p custom-file)
+  (load custom-file 'noerror 'nomessage))
+
 ;; moving files created by packages
 (setq projectile-known-projects-file (expand-file-name "tmp/projectile-bookmarks.eld" user-emacs-directory)
       lsp-session-file (expand-file-name "tmp/.lsp-session-v1" user-emacs-directory))

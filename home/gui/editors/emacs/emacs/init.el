@@ -26,6 +26,7 @@
 
 ;; Load custom modules
 (require 'init-clean)
+(require 'init-trust)
 (require 'init-evil)
 (require 'init-languages)
 (require 'init-ui)
