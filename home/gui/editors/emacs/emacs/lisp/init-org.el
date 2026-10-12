@@ -3,14 +3,23 @@
 (use-package org
   :ensure t
   :hook ((org-mode . visual-line-mode)
-	 (org-mode . (lambda () (setq-local evil-auto-indent nil))))
+	 (org-mode . (lambda ()
+		       (setq-local tab-width 4))))
   :config
   ;; --- Variables ---
   (setq org-hide-emphasis-markers t)
   (setq org-hide-leading-stars t)
   (setq org-return-follows-link t)
   ;; Use the combined list from your second block
-  (setq org-hidden-keywords '(title author date startup options)) 
+  (setq org-hidden-keywords '(title author date startup options))
+
+  ;; Stop Org from auto-indenting text under headings/lists
+  (setq org-adapt-indentation nil)
+
+  ;; Source block editing & indentation
+  (setq org-src-preserve-indentation t)
+  (setq org-edit-src-content-indentation 0)
+  (setq org-src-tab-acts-natively t)
 
   ;; --- Faces / Aesthetics ---
   (custom-theme-set-faces
