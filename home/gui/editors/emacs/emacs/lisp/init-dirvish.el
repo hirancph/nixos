@@ -25,6 +25,20 @@
   (setq dirvish-attributes
         '(nerd-icons file-time file-size collapse vc-state)))
 
+;; function to export org
+(defun my/ox-hugo-dired-export ()
+  "Export marked Org files or the file under point in Dired to Hugo using ox-hugo."
+  (interactive)
+  (require 'ox-hugo)
+  (let ((files (dired-get-marked-files)))
+    (dolist (file files)
+      (when (string-match-p "\\.org$" file)
+        (with-current-buffer (find-file-noselect file)
+          (org-mode)
+          (hack-local-variables) ; Force loading dir-locals for the buffer
+          (org-hugo-export-to-md)
+          (message "Exported %s to Hugo!" (file-name-nondirectory file)))))))
+
 ;; Apply custom bindings directly on top of evil-collection
 (with-eval-after-load 'evil-collection
   (evil-collection-define-key 'normal 'dired-mode-map
@@ -32,6 +46,7 @@
     "l" #'dired-find-file         ; Enter directory / open file
     "j" #'dired-next-line         ; Move down
     "k" #'dired-previous-line     ; Move up
+    "E" #'my/ox-hugo-dired-export ; export fast
     ;; "F" #'dirvish-layout-toggle
     )) 
 

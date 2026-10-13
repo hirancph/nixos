@@ -85,6 +85,11 @@
               (propertize (concat num-str " — ") 
                           'face '(:foreground "#4a506a")))))))
 
+;; ox-hugo to publish org notes as website
+(use-package ox-hugo
+  :ensure t
+  :after ox)
+
 ;; (use-package org-superstar
 ;;   :ensure t
 ;;   :hook (org-mode . org-superstar-mode)

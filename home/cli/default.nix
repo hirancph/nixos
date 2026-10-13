@@ -1,5 +1,6 @@
 { ... }: {
   imports = [
+    ./dev.nix
     ./distrobox.nix
     ./git.nix
     #./helix.nix
