@@ -39,9 +39,10 @@
   :hook
   ;; Enable Eglot automatically in target programming modes
   ((python-mode python-ts-mode
-		c-mode c++-mode c-ts-mode c++-ts-mode
-		js-mode js-ts-mode
-		nix-mode nix-ts-mode) . eglot-ensure)
+		        c-mode c++-mode c-ts-mode c++-ts-mode
+		        js-mode js-ts-mode
+		        nix-mode nix-ts-mode
+                html-mode html-ts-mode) . eglot-ensure)
   :custom
   ;; Performance & event optimizations
   (read-process-output-max (* 3 1024 1024))
@@ -50,7 +51,9 @@
   (eglot-sync-connect 1)
   :config
   (add-to-list 'eglot-server-programs
-	       '((nix-mode nix-ts-mode) . ("nixd"))))
+	           '((nix-mode nix-ts-mode) . ("nixd")))
+  (add-to-list 'eglot-server-programs
+               '((html-mode html-ts-mode) . ("vscode-html-language-server" "--stdio"))))
 
 ;; Render errors
 (use-package flymake
@@ -62,9 +65,9 @@
 
   :bind
   (:map flymake-mode-map
-	("M-n" . flymake-goto-next-error)
-	("M-p" . flymake-goto-prev-error)
-	("C-c ! l" . flymake-show-buffer-diagnostics)))
+	    ("M-n" . flymake-goto-next-error)
+	    ("M-p" . flymake-goto-prev-error)
+	    ("C-c ! l" . flymake-show-buffer-diagnostics)))
 
 ;; Configure built-in Eldoc to display Flymake errors simultaneous in the minibuffer
 (use-package eldoc
