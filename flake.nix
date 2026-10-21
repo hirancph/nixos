@@ -22,10 +22,12 @@
 
     noctalia-greeter = {
       url = "github:noctalia-dev/noctalia-greeter";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
+
+    umbriel.url = "github:noctalia-dev/umbriel/cachix";
 
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake/beta";
