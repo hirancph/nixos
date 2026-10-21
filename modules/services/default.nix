@@ -7,6 +7,7 @@
     ./network
     ./pipewire.nix
     ./polkit.nix
+    ./postgresql.nix
     ./power-profiles.nix
     ./xserver.nix
   ];

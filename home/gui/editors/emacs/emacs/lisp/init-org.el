@@ -59,10 +59,22 @@
   (org-appear-autosubmarkers t))
 
 ;; Set languages in org-babel
+(use-package ob-nix
+  :ensure t)
+
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((emacs-lisp . t)
-   (python . t)))
+   (python . t)
+   (nix . t)
+   (sql . t)))
+
+;; sql configuration for org-babel, change when using another engine
+(setq org-babel-default-header-args:sql
+      '((:engine . "postgresql")
+        (:dbhost . "localhost")
+        (:dbuser . "postgres")
+        (:dbname . "postgres")))
 
 ;; Hide leading stars and change bullet points
 (setq org-hide-leading-stars t)
