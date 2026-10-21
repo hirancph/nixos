@@ -15,7 +15,7 @@
 
   programs = {
     dconf.enable = true;
-
+    gpu-screen-recorder.enable = true;
     localsend.enable = true;
 
     appimage.enable = true;
