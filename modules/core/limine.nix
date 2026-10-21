@@ -10,8 +10,8 @@
       resolution = "1920x1080";
 
       style = {
-        wallpapers = [ ./../../themes/nix-kanagawa.png ];
-        wallpaperStyle = "stretched";
+        wallpapers = [ ./../../themes/nixos.png ];
+        wallpaperStyle = "centered";
         backdrop = "1f232a";
 
         interface = {
