@@ -1,19 +1,15 @@
 binds {
   // WINDOW FOUCUS (VIM)
   Mod+H   { focus-column-left; }
-  Mod+J   { focus-window-down; }
-  Mod+K   { focus-window-up; }
+  Mod+J   { focus-window-or-workspace-down; }
+  Mod+K   { focus-window-or-workspace-up; }
   Mod+L   { focus-column-right; }
-
-
 
   // WINDOW MOVEMENT (VIM)
   Mod+Shift+H   { move-column-left; }
-  Mod+Shift+J   { move-window-down; }
-  Mod+Shift+K   { move-window-up; }
+  Mod+Shift+J   { move-window-down-or-to-workspace-down; }
+  Mod+Shift+K   { move-window-up-or-to-workspace-up; }
   Mod+Shift+L   { move-column-right; }
-
-
 
   // WINDOW MANAGEMENT
   Mod+Q repeat=false { close-window; }
@@ -65,27 +61,16 @@ binds {
   Mod+Shift+Slash { show-hotkey-overlay; }
   Mod+Tab repeat=false { toggle-overview; }
 
-
-
   // WORKSPACE NAVIGATION
-  Mod+U   { focus-workspace-down; }
-  Mod+I   { focus-workspace-up; }
   Mod+WheelScrollDown  cooldown-ms=150 { focus-workspace-down; }
   Mod+WheelScrollUp  cooldown-ms=150 { focus-workspace-up; }
 
   // MOVE TO WORKSPACE
-  Mod+Shift+U   { move-column-to-workspace-down; }
-  Mod+Shift+I   { move-column-to-workspace-up; }
   Mod+Shift+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
   Mod+Shift+WheelScrollUp cooldown-ms=150 { move-column-to-workspace-up; }
 
-
   // WINDOW RULES
   Mod+O     { toggle-window-rule-opacity; }
-
-
-
-
 
   // APPLICATION LAUNCHERS
   Mod+Return { spawn "kitty"; }
