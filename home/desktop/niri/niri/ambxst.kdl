@@ -1,0 +1,2 @@
+spawn-at-startup "ambxst"
+include "~/.local/share/ambxst/niri.kdl"

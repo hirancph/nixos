@@ -15,6 +15,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    dms = {
+      url = "github:duxlabs-dev/dux-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    dgop = {
+      url = "github:duxlabs-dev/dux-gop";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     noctalia = {
       url = "github:noctalia-dev/noctalia";
       # inputs.nixpkgs.follows = "nixpkgs"; # got tired of building
@@ -28,6 +38,12 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
     umbriel.url = "github:noctalia-dev/umbriel/cachix";
+
+    ambxst = {
+      url = "github:Axenide/Ambxst";
+    };
+
+    serpantinum.url = "github:ilyamiro/serpantinum";
 
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake/beta";

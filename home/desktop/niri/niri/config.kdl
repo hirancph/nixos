@@ -5,6 +5,10 @@ include "layout.kdl"
 include "outputs.kdl"
 include "spawn.kdl"
 include "windowrules.kdl"
+// Desktop shells. Only enable one and comment the rest
+include "dux.kdl"
+//include "ambxst.kdl"
+//include "serpantinum.kdl"
 
 environment {
   XDG_CURRENT_DESKTOP "niri"
@@ -16,3 +20,4 @@ environment {
 hotkey-overlay {
   skip-at-startup
 }
+

@@ -18,44 +18,6 @@ binds {
   Mod+Alt+F { toggle-window-floating; }
   Mod+Ctrl+F { switch-focus-between-floating-and-tiling; }
 
-
-
-  // NOCTALIA KEYBINDS
-  Mod+Space {
-        spawn-sh "noctalia msg panel-toggle launcher";
-      }
-  Mod+Shift+Escape {
-        spawn-sh "noctalia msg panel-toggle session";
-      }
-  Mod+V {
-    spawn-sh "noctalia msg panel-toggle clipboard";
-  }
-  Print {
-    spawn-sh "noctalia msg screenshot-fullscreen";
-  }
-  Mod+Print {
-    spawn-sh "noctalia msg screenshot-region";
-  }
-  Mod+Shift+D {
-    spawn-sh "noctalia msg notification-dnd-toggle";
-  }
-  Pause {
-    spawn-sh "noctalia msg media toggle";
-  }
-  Mod+F11 {
-    spawn-sh "noctalia msg media previous";
-  }
-  Mod+F12 {
-    spawn-sh "noctalia msg media next";
-  }
-  Mod+minus {
-    spawn-sh "noctalia msg volume-down";
-  }
-  Mod+equal {
-    spawn-sh "noctalia msg volume-up";
-  }
-
-
   // SYSTEM AND OVERVIEW
   Mod+Shift+Q { quit; }
   Mod+Shift+Slash { show-hotkey-overlay; }
