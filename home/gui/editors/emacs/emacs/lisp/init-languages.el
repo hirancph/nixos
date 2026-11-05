@@ -76,11 +76,11 @@
   (eldoc-documentation-strategy #'eldoc-documentation-compose)
   (eldoc-echo-area-use-multiline-p 1))
 
-(use-package eldoc-box
-  :ensure t
-  :hook (eglot-managed-mode . eldoc-box-hover-at-point-mode)
-  :custom
-  (eldoc-box-max-pixel-width 600)
-  (eldoc-box-max-pixel-height 400))
+;; (use-package eldoc-box
+;;   :ensure t
+;;   :hook (eglot-managed-mode . eldoc-box-hover-at-point-mode)
+;;   :custom
+;;   (eldoc-box-max-pixel-width 600)
+;;   (eldoc-box-max-pixel-height 400))
 
 (provide 'init-languages)
