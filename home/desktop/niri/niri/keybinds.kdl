@@ -19,7 +19,7 @@ binds {
   Mod+Ctrl+F { switch-focus-between-floating-and-tiling; }
 
   // SYSTEM AND OVERVIEW
-  Mod+Shift+Q { quit; }
+  Mod+Shift+Escape { quit; }
   Mod+Shift+Slash { show-hotkey-overlay; }
   Mod+Tab repeat=false { toggle-overview; }
 

@@ -4,7 +4,7 @@ binds{
   Mod+Space {
         spawn-sh "noctalia msg panel-toggle launcher";
       }
-  Mod+Shift+Escape {
+  Mod+Escape {
         spawn-sh "noctalia msg panel-toggle session";
       }
   Mod+V {
