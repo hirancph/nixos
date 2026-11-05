@@ -62,7 +62,12 @@
       system = "x86_64-linux";
       pkgs-unstable = import inputs.nixpkgs-unstable {
         inherit system;
-        config.allowUnfree = true;
+        config = {
+          allowUnfree = true;
+          problems.handlers = {
+            "gtk+".broken = "warn";
+          };
+        };
       };
     in
     {
