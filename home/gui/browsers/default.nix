@@ -1,6 +1,6 @@
 { ... }: {
   imports = [
-    ./brave-origin.nix
+    #./brave-origin.nix #removed from nixpkgs
     ./zen.nix
   ];
 }
