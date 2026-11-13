@@ -6,8 +6,8 @@ include "outputs.kdl"
 include "spawn.kdl"
 include "windowrules.kdl"
 // Desktop shells. Only enable one and comment the rest
-//include "dux.kdl"
-include "noctalia.kdl"
+include "dux.kdl"
+//include "noctalia.kdl"
 //include "ambxst.kdl"
 //include "serpantinum.kdl"
 
